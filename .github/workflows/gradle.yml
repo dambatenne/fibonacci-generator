@@ -52,7 +52,8 @@ jobs:
       uses: gradle/gradle-build-action@ce999babab2de1c4b649dc15f0ee67e6246c994f
       with:
         arguments: ${{ matrix.target }}
-        passPhrase: '${{secrets.OSSRH_GPG_SECRET_KEY_PASSWORD}}'
-        keyName: '${{secrets.OSSRH_GPG_SECRET_KEY_ID}}'
-        sonatypeUsername: '${{secrets.OSSRH_USERNAME}}'
-        sonatypePassword: '${{secrets.OSSRH_PASSWORD}}'
+      env:
+        OSSRH_GPG_SECRET_KEY_PASSWORD: '${{secrets.OSSRH_GPG_SECRET_KEY_PASSWORD}}'
+        OSSRH_GPG_SECRET_KEY: '${{secrets.OSSRH_GPG_SECRET_KEY}}'
+        OSSRH_USERNAME: '${{secrets.OSSRH_USERNAME}}'
+        OSSRH_PASSWORD: '${{secrets.OSSRH_PASSWORD}}'
