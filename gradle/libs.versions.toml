@@ -2,12 +2,14 @@
 agp = "8.5.0"
 kotlin = "2.0.0"
 nexus-publish = "2.0.0"
+deployer = "0.13.0"
 android-minSdk = "24"
 android-compileSdk = "34"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 nexus-publish = { module = "io.github.gradle-nexus.publish-plugin:io.github.gradle-nexus.publish-plugin.gradle.plugin", version.ref = "nexus-publish" }
+deployer = {module = "io.deepmedia.tools.deployer:deployer", version.ref = "deployer"}
 
 [plugins]
 androidLibrary = { id = "com.android.library", version.ref = "agp" }

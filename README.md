@@ -41,7 +41,7 @@ The most part of the job is already automated for you. However, deployment to Ma
     ```bash
     gpg --send-keys --keyserver keyserver.ubuntu.com "<your key id>"
     ```
-1. - [ ] Now you should create secrets available to your GitHub Actions
+1. - [x] Now you should create secrets available to your GitHub Actions
     1. via `gh` command
     ```bash
     gh secret set OSSRH_GPG_SECRET_KEY -a actions --body "$(gpg --export-secret-key --armor "<your key id>")"
@@ -51,7 +51,7 @@ The most part of the job is already automated for you. However, deployment to Ma
     gh secret set OSSRH_USERNAME -a actions --body "<your sonatype account username>"
     ```
     1. Or via the interface in `Settings` → `Secrets and Variables` → `Actions`, same variables as in 1.
-1. - [ ] Edit deployment pom parameters in [`module.publication.gradle.kts`](convention-plugins/src/main/kotlin/module.publication.gradle.kts#L25-L44)
-1. - [ ] Edit deploy targets in [`deploy.yml`](.github/workflows/deploy.yml#L23-L36)
-1. - [ ] Call deployment manually when ready [in Actions](../../actions/workflows/deploy.yml) → `Run Workflow`
+1. - [x] Edit deployment pom parameters in [`module.publication.gradle.kts`](convention-plugins/src/main/kotlin/module.publication.gradle.kts#L25-L44)
+1. - [x] Edit deploy targets in [`deploy.yml`](.github/workflows/deploy.yml#L23-L36)
+1. - [x] Call deployment manually when ready [in Actions](../../actions/workflows/deploy.yml) → `Run Workflow`
 1. - [ ] When you see in your account on https://oss.sonatype.org that everything is fine, you can release your staging repositories and add target `releaseSonatypeStagingRepository` to `deploy.yml` [after this line](.github/workflows/deploy.yml#L60). This way artifacts will be published to central automatically when tests pass.
